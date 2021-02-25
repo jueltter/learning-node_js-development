@@ -14,7 +14,9 @@ npm -v
 # to start a project (package.json) and use third party libraries
 npm init
 # to install lodash (third party library) and update package.json
-npm install loadsh --save
+npm install lodash --save
+# to install yargs 11.0.0 (third party library) and update package.json
+npm install yargs@11.0.0 --save
 ```
 ```bash
 # to install nodemon

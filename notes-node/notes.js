@@ -1,16 +1,16 @@
 console.log('Starting notes.js');
 const fs = require('fs');
 
-var addNote = (tittle, body) => {
-    // console.log('Adding note', tittle, body);
+var addNote = (title, body) => {
+    // console.log('Adding note', title, body);
     var notes = fetchNotes();    
     
     var note = {
-        tittle,
+        title,
         body
     }
 
-    var duplicateNotes = notes.filter((note) => note.tittle === tittle);
+    var duplicateNotes = notes.filter((note) => note.title === title);
 
     if (duplicateNotes.length === 0){
         notes.push(note);
@@ -20,27 +20,28 @@ var addNote = (tittle, body) => {
 }
 
 var getAll = () => {
-    console.log('Getting all notes');
+    return fetchNotes();
 }
 
-var getNote = (tittle) => {
-    //console.log('Reading note', tittle);
+var getNote = (title) => {
+    //console.log('Reading note', title);
     var notes = fetchNotes();
-    var filteredNotes = notes.filter((note) => note.tittle === tittle);
+    var filteredNotes = notes.filter((note) => note.title === title);
     return filteredNotes[0];
 }
 
-var removeNote = (tittle) => {
-    //console.log('Removing note', tittle);
+var removeNote = (title) => {
+    //console.log('Removing note', title);
     var notes = fetchNotes();
-    var filteredNotes = notes.filter((note) => note.tittle !== tittle);
+    var filteredNotes = notes.filter((note) => note.title !== title);
     saveNotes(filteredNotes);
     return notes.length !== filteredNotes.length;
 }
 
 var logNote = (note) => {
+    debugger;
     console.log('--');
-    console.log(`Tittle: ${note.tittle}`);
+    console.log(`Title: ${note.title}`);
     console.log(`Body: ${note.body}`);
 }
 
