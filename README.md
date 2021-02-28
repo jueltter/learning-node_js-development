@@ -25,3 +25,7 @@ npm install nodemon -g
 nodemon app.js
 
 ```
+
+```js
+console.log(JSON.stringify(results, undefined, 2));
+```
