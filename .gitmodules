@@ -1,0 +1,3 @@
+[submodule "node-web-server"]
+	path = node-web-server
+	url = https://github.com/jueltter/node-web-server.git
